@@ -5,7 +5,6 @@ A full-stack task management web application designed to help users create, upda
 ## 🌐 Live Website
 
 👉 https://ananya-task-management.netlify.app/
-
 ## 🛠️ Tech Stack
 
 - **Frontend:** HTML, CSS, JavaScript
