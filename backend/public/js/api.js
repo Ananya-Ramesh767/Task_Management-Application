@@ -14,24 +14,28 @@ const Auth = {
   }
 };
 
+const API_BASE_URL = 'https://task-management-application-nbw0.onrender.com';
+
 async function api(path, options = {}) {
   const headers = { 'Content-Type': 'application/json', ...(options.headers || {}) };
   if (Auth.token) headers.Authorization = `Bearer ${Auth.token}`;
 
-  const res = await fetch(`/api${path}`, {
+  const res = await fetch(`${API_BASE_URL}/api${path}`, {
     ...options,
     headers,
     body: options.body ? JSON.stringify(options.body) : undefined
   });
 
   let data = {};
-  try { data = await res.json(); } catch (e) { /* empty body */ }
+  try { data = await res.json(); } catch (e) {}
 
   if (res.status === 401 && location.pathname !== '/index.html' && location.pathname !== '/') {
     Auth.clear();
     location.href = '/index.html';
     return;
   }
+
   if (!res.ok) throw new Error(data.error || 'Request failed');
+
   return data;
 }

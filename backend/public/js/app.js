@@ -280,8 +280,9 @@ if (user) {
 }
 
 /* ---------- real-time updates ---------- */
-const socket = io({ auth: { token: Auth.token } });
-
+const socket = io('https://task-management-application-nbw0.onrender.com', {
+  auth: { token: Auth.token }
+});
 socket.on('connect', () => {
   liveDot.classList.add('on');
   liveDot.querySelector('span').textContent = 'Live';
