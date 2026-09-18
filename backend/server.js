@@ -77,5 +77,5 @@ io.on('connection', (socket) => {
 });
 
 server.listen(PORT, () => {
-  console.log(`\n  Task Manager running at http://localhost:${PORT}\n`);
+console.log(`Task Manager running on port ${PORT}`);
 });
