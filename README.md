@@ -3,11 +3,9 @@
 A full-stack task management web application designed to help users create, update, organize, and track their tasks efficiently.
 
 ## 🌐 Live Website
-
 👉 https://ananya-task-management.netlify.app/
 
 ## 🛠️ Tech Stack
-
 - **Frontend:** HTML, CSS, JavaScript
 - **Backend:** Node.js, Express.js
 - **Database:** SQLite
@@ -17,7 +15,6 @@ A full-stack task management web application designed to help users create, upda
 - **Backend Deployment:** Render
 
 ## ✨ Features
-
 - User registration and login
 - Secure authentication and authorization
 - Create, view, update, and delete tasks
@@ -28,11 +25,11 @@ A full-stack task management web application designed to help users create, upda
 - User-specific task management
 
 ## 📂 Project Structure
-
-```text
+```
 Task_Management-Application/
 │
 ├── backend/
+│   ├── node_modules/          # installed dependencies (gitignored)
 │   ├── public/
 │   │   ├── index.html
 │   │   ├── app.html
@@ -44,8 +41,14 @@ Task_Management-Application/
 │   │   ├── middleware/
 │   │   └── routes/
 │   │
+│   ├── data/                  # SQLite database (gitignored)
+│   ├── .env                   # Environment variables (gitignored)
+│   ├── .env.example           # Template for .env
+│   ├── .gitignore             # backend-specific ignore rules
 │   ├── server.js
 │   ├── package.json
 │   └── package-lock.json
 │
+├── .gitignore
 └── README.md
+```
