@@ -282,7 +282,7 @@ if (user) {
 /* ---------- real-time updates ---------- */
 // No URL argument = connect back to the same origin that served this page,
 // so this keeps working after every deploy without editing code.
-const socket = io({
+const socket = io(API_BASE_URL || undefined, {
   auth: { token: Auth.token }
 });
 socket.on('connect', () => {

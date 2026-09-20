@@ -14,10 +14,17 @@ const Auth = {
   }
 };
 
-// The frontend is served by this same Express app, so calling the API
-// with a relative path works everywhere: locally, on Render, or any other
-// host, without ever needing to hardcode a deployment URL here.
-const API_BASE_URL = '';
+// The frontend can be served two different ways:
+//  - From Render itself (backend serves this same public/ folder), where
+//    a relative path is correct because the API lives on the same origin.
+//  - From Netlify, which only hosts static files with no backend at all,
+//    so relative paths would hit Netlify and 404. In that case we need
+//    the real Render backend URL instead.
+// Localhost is always treated as "same origin" for local development.
+const RENDER_BACKEND_URL = 'https://task-management-application-nbw0.onrender.com';
+const isLocal = location.hostname === 'localhost' || location.hostname === '127.0.0.1';
+const isRenderItself = location.hostname.endsWith('.onrender.com');
+const API_BASE_URL = (isLocal || isRenderItself) ? '' : RENDER_BACKEND_URL;
 
 async function api(path, options = {}) {
   const headers = { 'Content-Type': 'application/json', ...(options.headers || {}) };
