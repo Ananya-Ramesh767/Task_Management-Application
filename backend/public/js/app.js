@@ -280,7 +280,9 @@ if (user) {
 }
 
 /* ---------- real-time updates ---------- */
-const socket = io('https://task-management-application-nbw0.onrender.com', {
+// No URL argument = connect back to the same origin that served this page,
+// so this keeps working after every deploy without editing code.
+const socket = io({
   auth: { token: Auth.token }
 });
 socket.on('connect', () => {

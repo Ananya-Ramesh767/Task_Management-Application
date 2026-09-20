@@ -14,7 +14,10 @@ const Auth = {
   }
 };
 
-const API_BASE_URL = 'https://task-management-application-nbw0.onrender.com';
+// The frontend is served by this same Express app, so calling the API
+// with a relative path works everywhere: locally, on Render, or any other
+// host, without ever needing to hardcode a deployment URL here.
+const API_BASE_URL = '';
 
 async function api(path, options = {}) {
   const headers = { 'Content-Type': 'application/json', ...(options.headers || {}) };
