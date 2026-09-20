@@ -4,15 +4,16 @@ A full-stack task management web application designed to help users create, upda
 
 ## 🌐 Live Website
 
-👉 
-
+👉 https://ananya-task-management.netlify.app/
 ## 🛠️ Tech Stack
 
-- Frontend: HTML, CSS, JavaScript
-- Backend: Node.js, Express.js
-- Database: SQLite
-- Authentication: JWT & bcrypt
-- Real-time Updates: Socket.IO
+- **Frontend:** HTML, CSS, JavaScript
+- **Backend:** Node.js, Express.js
+- **Database:** SQLite
+- **Authentication:** JWT & bcrypt
+- **Real-time Updates:** Socket.IO
+- **Frontend Deployment:** Netlify
+- **Backend Deployment:** Render
 
 ## ✨ Features
 
